@@ -15,7 +15,7 @@ import {AgmCoreModule} from '@agm/core';
   entryComponents: [],
   imports: [BrowserModule, 
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDw75EM8_xI-smSgmzn0iX89rSNNFtaNQM',
+      apiKey: 'google key',
       
       libraries: ['places']}),
       IonicModule.forRoot(), AppRoutingModule],
