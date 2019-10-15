@@ -24,7 +24,7 @@ import {Geofence} from '@ionic-native/geofence/ngx';
   imports: [BrowserModule, 
     HttpClientModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDw75EM8_xI-smSgmzn0iX89rSNNFtaNQM',
+      apiKey: 'google key',
       
       libraries: ['places']}),
       IonicModule.forRoot(), AppRoutingModule],
