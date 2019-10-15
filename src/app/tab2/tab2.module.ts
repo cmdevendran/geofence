@@ -4,9 +4,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tab2Page } from './tab2.page';
+import {AgmCoreModule} from '@agm/core';
 
 @NgModule({
   imports: [
+    AgmCoreModule,
     IonicModule,
     CommonModule,
     FormsModule,

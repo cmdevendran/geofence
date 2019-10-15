@@ -1,5 +1,7 @@
 {
   "name": "geofencing1",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

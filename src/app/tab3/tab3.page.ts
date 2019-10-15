@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 import {  ViewChild, ElementRef, NgZone } from '@angular/core';
+import { Platform } from '@ionic/angular'
 
 import {  OnInit } from '@angular/core';
 import { MapsAPILoader,MouseEvent } from '@agm/core';
+import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
+
 
 
 
@@ -23,15 +26,31 @@ export class Tab3Page implements OnInit{
    public searchElementRef: ElementRef;
  
   constructor( private mapsAPILoader: MapsAPILoader,
-    private ngZone: NgZone) {}
+    private ngZone: NgZone,
+    private androidPermissions: AndroidPermissions,
+    private plt : Platform) {}
 
 
  
   ngOnInit() {
     //load Places Autocomplete
     this.mapsAPILoader.load().then(() => {
-      this.setCurrentLocation();
+
+      if(this.plt.ready().then((readySource) => {
+        this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.ACCESS_COARSE_LOCATION).then(
+          result => console.log('Has permission?',result.hasPermission),
+          err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.ACCESS_COARSE_LOCATION)
+        );
+        
+        this.androidPermissions.requestPermissions([this.androidPermissions.PERMISSION.ACCESS_COARSE_LOCATION]);
+        console.log("Platform ready", readySource);
+        this.setCurrentLocation();
+
+      }))
+      
+      //this.setCurrentLocation();
       this.geoCoder = new google.maps.Geocoder;
+      
  
       let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
         types: ["address"]
