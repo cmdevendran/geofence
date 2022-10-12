@@ -33,7 +33,7 @@
     "body-parser": "^1.19.0",
     "cordova-android": "8.1.0",
     "cordova-browser": "6.0.0",
-    "cordova-plugin-add-swift-support": "1.6.0",
+    "cordova-plugin-add-swift-support": "1.7.2",
     "cordova-plugin-android-permissions": "1.0.0",
     "cordova-plugin-compat": "1.2.0",
     "cordova-plugin-geofence": "0.7.0",
