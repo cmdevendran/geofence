@@ -43,7 +43,7 @@
     "core-js": "^2.5.4",
     "dotenv": "^8.1.0",
     "es6-promise-plugin": "4.2.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "pusher": "^3.0.0",
     "pusher-js": "^5.0.2",
     "rxjs": "~6.5.1",
